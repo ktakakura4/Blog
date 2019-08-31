@@ -1,13 +1,20 @@
 package com.example.demo.sample;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.Service.SampleService;
+import com.example.demo.domain.SampleEntity;
+
 @Controller
 public class SampleController {
+	
+	@Autowired
+	private SampleService SampleService;
 	
 	@GetMapping("/sample")	//localhost:8080/sampleへのGETリクエスト。
 	public String getSample() {	//メソッド名は頭にgetを付ける
@@ -21,6 +28,20 @@ public class SampleController {
 		model.addAttribute("response",str);	//htmlから値を受け取れる。model.addAttribute("キー名", 値)
 		
 		return "sampleResponse";
+	}
+	
+	@PostMapping("/sample/db")
+	public String postDbRequest(@RequestParam("search")String str, Model model) {
+		
+		Long id = Long.parseLong(str);
+		
+		SampleEntity sampleEntity = SampleService.findByid(id);
+
+		model.addAttribute("id", sampleEntity.getId());
+		model.addAttribute("name", sampleEntity.getName());
+		model.addAttribute("no", sampleEntity.getNo());
+		
+		return "sampleRepositoryDb";
 	}
 }
 

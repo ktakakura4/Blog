@@ -7,7 +7,11 @@
     <body>
         <h1>sample</h1>
         <form action="/sample" method="POST">   <!--action=データの送信先（URI）、CGIプログラムのURI-->
-            入力フォーム；<input type="text" name="text" th:value="${text_value}"/> <!--value=画面からControllerにnameの値を渡す-->
+            入力フォーム：<input type="text" name="text" th:value="${text_value}"/> <!--value=画面からControllerにnameの値を渡す-->
+            <input type="submit" value="クリック"/>
+        </form>
+        <form method="POST" action="/sample/db">
+            ID入力フォーム：<input type="text" name="search" th:value="${search_value}">
             <input type="submit" value="クリック"/>
         </form>
     </body>
