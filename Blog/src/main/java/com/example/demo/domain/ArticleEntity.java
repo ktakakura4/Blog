@@ -1,26 +1,28 @@
 package com.example.demo.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "sampleEntity")
+@Table(name = "articleEntity")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class SampleEntity {
+public class ArticleEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-
+	@Column
 	private long id;
-	private String name;
-	private Integer no;	
+	
+	@Column(length = 50, nullable = false)
+	private String title;
+	
+	@Column(length = 200, nullable = false)
+	private String text;
+
 }
