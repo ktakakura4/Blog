@@ -1,14 +1,11 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" >
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
-    <script src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
-    <script src="@{webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
-    <title>List</title>
 </head>
 <body>
-    <div>
-        <div>
+    <div th:fragment="list_contents">
+        <div class="page-header">
             <h1>List</h1>
         </div>
             <table class="table table-bordered table-hover table-striped">
