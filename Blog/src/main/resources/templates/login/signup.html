@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
-    <script src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
-    <script src="@{webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+    <script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+    <script th:src="@{webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
     <title>SignUp</title>
 </head>
 <body>
@@ -11,7 +11,7 @@
         <div>
             <h1>SignUp</h1>
         </div>
-        <form action="">
+        <form tmethod="post" th:action="@{/signup}">
             <table class="table table-bordered table-hover">
                 <tr>
                     <th class="active col-sm-3">UserID</th>
@@ -57,15 +57,14 @@
                     <th class="active">Marrige</th>
                     <td>
                          <div class="form-group">
-                             <div>
-                                <input type="radio" class="form-control"/>
-                             </div>
+                            <div th:each="item : ${radioMarriage}">
+                                <input type="radio" name="radioMarrige" th:text="${item.key}" th:value="${item.value}"></input>
+                            </div>
                         </div>
                     </td>
                 </tr>
             </table>
             <button class="btn btn-primary" type="submit">SignUp</button>
-            <button class="btn btn-primary" type="submit">Return</button>
         </form>
     </div>
 </body>
