@@ -24,6 +24,7 @@ public class ArticleController {
 	public String getArticleList(Model model) {
 		List<ArticleEntity> articleList = articleService.findAll();
 		model.addAttribute("articleList", articleList);
-		return "article/list.html";
+		model.addAttribute("contents", "article/list :: list_contents");
+		return "article/layout.html";
 	}
 }
