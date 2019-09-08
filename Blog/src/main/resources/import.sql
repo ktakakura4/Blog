@@ -1,0 +1,1 @@
+INSERT INTO article_entity (id, text, title) VALUES (1, 'aaaaa', 'bbbbb'); INSERT INTO article_entity (id, text, title) VALUES (2, 'ccccc', 'ddddd');
