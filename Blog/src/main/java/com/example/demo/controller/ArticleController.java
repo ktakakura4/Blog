@@ -50,12 +50,14 @@ public class ArticleController {
 
 	@GetMapping("article/{id}/detail")
 	public String getDetail(Model model) {
-		return "article/detail";
+		model.addAttribute("contents", "article/detail :: detail_contents");
+		return "article/layout.html";
 	}
 
 	@GetMapping("article/{id}/update")
 	public String getUpdate(Model model) {
-		return "article/update";
+		model.addAttribute("contents", "article/update :: update_contents");
+		return "article/layout.html";
 	}
 
 	@PostMapping("article/{id}")
