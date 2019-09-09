@@ -34,4 +34,12 @@ public class ArticleController {
 		model.addAttribute("contents", "article/post :: post_contents");
 		return "article/layout.html";
 	}
+
+	@PostMapping("/articlePost")
+	public String postArticleP(Model model) {
+		List<ArticleEntity> articleList = articleService.findAll();
+		model.addAttribute("articleList", articleList);
+		model.addAttribute("contents", "article/list :: list_contents");
+		return "article/layout.html";
+	}
 }

@@ -8,13 +8,13 @@
         <div class="page-header" >
             <h1>Post</h1>
         </div>
-        <form action="">
+        <form method="POST" th:action="@{/articlePost}" th:object="${articleEntity}">
             <table class="table table-bordered table-hover">
                 <tr>
                     <th class="active col-sm-3">ID</th>
                     <td>
                          <div class="form-group">
-                           <input type="text" class="form-control"/>
+                           <input type="number" class="form-control" name="id"/>
                          </div>
                     </td>
                 </tr>
@@ -22,7 +22,7 @@
                     <th class="active col-sm-3">Title</th>
                     <td>
                         <div class="form-group">
-                            <input type="text" class="form-control"/>
+                            <input type="text" class="form-control" name="title"/>
                         </div>
                     </td>
                 </tr>
@@ -30,13 +30,12 @@
                     <th class="active">Text</th>
                     <td>
                         <div class="form-group">
-                            <input type="text" class="form-control"/>
+                            <input type="text" class="form-control" name="text"/>
                         </div>
                     </td>
                 </tr>
               </table>
             <button class="btn btn-primary" type="submit">Post</button>
-            <button class="btn btn-primary" type="submit">Return</button>
         </form>
     </div>
 </body>
