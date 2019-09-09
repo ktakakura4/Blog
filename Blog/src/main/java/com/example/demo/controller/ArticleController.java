@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,11 +36,14 @@ public class ArticleController {
 		return "article/layout.html";
 	}
 
-	@PostMapping("/articlePost")
-	public String postArticleP(Model model) {
+	@PostMapping("/articlelist")
+	public String postArticleP(@ModelAttribute("artricleEntity") ArticleEntity articleEntity, Model model) {
 		List<ArticleEntity> articleList = articleService.findAll();
 		model.addAttribute("articleList", articleList);
+
+		articleService.save(articleEntity);
+
 		model.addAttribute("contents", "article/list :: list_contents");
-		return "article/layout.html";
+		return "redirect:/articlelist";
 	}
 }

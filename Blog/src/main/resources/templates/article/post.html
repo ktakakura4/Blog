@@ -8,13 +8,13 @@
         <div class="page-header" >
             <h1>Post</h1>
         </div>
-        <form method="POST" th:action="@{/articlePost}" th:object="${articleEntity}">
+        <form method="POST" th:action="@{/articlelist}" th:object="${articleEntity}">
             <table class="table table-bordered table-hover">
                 <tr>
                     <th class="active col-sm-3">ID</th>
                     <td>
                          <div class="form-group">
-                           <input type="number" class="form-control" name="id"/>
+                           <input type="number" class="form-control" name="id" />
                          </div>
                     </td>
                 </tr>
