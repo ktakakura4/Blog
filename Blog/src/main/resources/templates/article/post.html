@@ -1,18 +1,23 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" ></html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
-    <script src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
-    <script src="@{webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
-    <title>Post</title>
 </head>
 <body>
-    <div>
-        <div>
+    <div th:fragment="post_contents">
+        <div class="page-header" >
             <h1>Post</h1>
         </div>
         <form action="">
             <table class="table table-bordered table-hover">
+                <tr>
+                    <th class="active col-sm-3">ID</th>
+                    <td>
+                         <div class="form-group">
+                           <input type="text" class="form-control"/>
+                         </div>
+                    </td>
+                </tr>
                 <tr>
                     <th class="active col-sm-3">Title</th>
                     <td>
