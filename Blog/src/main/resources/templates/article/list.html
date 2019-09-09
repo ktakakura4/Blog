@@ -17,12 +17,14 @@
                 <tr>
                     <th class="info col-sm-2">Title</th>
                     <th class="info col-sm-2">Text</th>
-                    <th class="info col-sm-2">更新</th>
-                    <th class="info col-sm-2">削除</th>
+                    <th class="info col-sm-2">Detail</th>
+                    <th class="info col-sm-2">Update</th>
+                    <th class="info col-sm-2">Delete</th>
                 </tr>
                 <tr th:each="article : ${articleList}" th:object="${article}">
                     <td th:text="*{title}"></td>
                     <td th:text="*{text}"></td>
+                    <td><a href class="btn btn-primaty">Detail</a></td>
                     <td><a href="" class="btn btn-primaty">Update</a></td>
                     <td><a href="" class="btn btn-primaty">Detail</a></td>
                 </tr>
