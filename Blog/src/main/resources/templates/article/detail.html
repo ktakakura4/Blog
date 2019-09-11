@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
 </head>
 <body>
-        <div th:fragment="detail_contents">
-                <div class="page-header" >
+    <div th:fragment="detail_contents">
+        <div class="cntainer">
             <h1>Detail</h1>
         </div>
-        <form action="">
-            <table class="table table-bordered table-hover">
-                <tr>
-                    <th class="active col-sm-3">Title</th>
-                    <td>
-                        <div class="form-group">
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="active">Text</th>
-                    <td>
-                        <div class="form-group">
-                            <input type="text" class="form-control"/>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div>
+    <form action="" th:method="put" th:object="${article}">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th class="active col-sm-3">Title</th>
+                <td>
+                    <div class="form-group">
+                        <input type="text" class="form-control" th:field="*{title}"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="active">Text</th>
+                <td>
+                    <div class="form-group">
+                        <input type="text" class="form-control" th:field="*{text}"/>
+                    </div>
+                </td>
+            </tr>
+          </table>
+        <button class="btn btn-primary" type="submit">Update</button>
+    </form>
 </body>

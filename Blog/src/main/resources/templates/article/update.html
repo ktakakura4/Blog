@@ -8,13 +8,13 @@
                 <div class="page-header" >
             <h1>Update</h1>
         </div>
-        <form action="">
+        <form action="" th:method="put" th:object="${article}">
             <table class="table table-bordered table-hover">
                 <tr>
                     <th class="active col-sm-3">Title</th>
                     <td>
                         <div class="form-group">
-                            <input type="text" class="form-control"/>
+                            <input type="text" class="form-control" th:field="*{title}"/>
                         </div>
                     </td>
                 </tr>
@@ -22,7 +22,7 @@
                     <th class="active">Text</th>
                     <td>
                         <div class="form-group">
-                            <input type="text" class="form-control"/>
+                            <input type="text" class="form-control" th:field="*{text}"/>
                         </div>
                     </td>
                 </tr>

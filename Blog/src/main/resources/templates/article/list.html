@@ -24,8 +24,8 @@
                 <tr th:each="article : ${articleList}" th:object="${article}">
                     <td th:text="*{title}"></td>
                     <td th:text="*{text}"></td>
-                    <td><a th:href="@{/article/{id}/detail(id=*{id})}" class="btn btn-primaty">Detail</a></td>
-                    <td><a th:href="@{/article/{id}/update(id=*{id})}" ref="" class="btn btn-primaty">Update</a></td>
+                    <td><a th:href="@{/article/detail/{id}(id=*{id})}" class="btn btn-primaty">Detail</a></td>
+                    <td><a th:href="@{/article/update/{id}(id=*{id})}" class="btn btn-primaty">Update</a></td>
                     <td>
                         <form th:action="@{/article/{id}/(id=*{id})}" th:method="delete">
                             <input type="submit" value="delete" class="btn btn-default btn-xs">
