@@ -15,10 +15,11 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "userEntity")
-@SequenceGenerator(name = "user_id_seq")
+@SequenceGenerator(name = "users_id_seq")
 @Data
 @NoArgsConstructor
 public class UserEntity {
+
 	@Id
 	@Column
 	private String userId;
